@@ -1,3 +1,4 @@
+package com.phwhitin.docker;
 
 public class Application {
 
