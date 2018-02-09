@@ -1,7 +1,10 @@
-FROM openjdk:8-jdk
+FROM openjdk:9-jdk
 
-COPY . /usr/apps/hello-world
+ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/apps/hello-cloud/hello-cloud.jar"]
 
-RUN javac /usr/apps/hello-world/src/main/java/Application.java -d /usr/apps/hello-world/
+# Add Maven dependencies (not shaded into the artifact; Docker-cached)
+ADD target/lib           /usr/apps/myservice/lib
 
-CMD ["java", "Application"]
+# Add the service itself
+ARG JAR_FILE
+ADD target/${JAR_FILE} /usr/apps/hello-cloud/hello-cloud.jar
