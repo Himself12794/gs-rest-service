@@ -1,9 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>test-docker</groupId>
-  <artifactId>test-docker</artifactId>
+  <groupId>hello-cloud</groupId>
+  <artifactId>hello-cloud</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
   <build>
     <plugins>
       <plugin>
@@ -42,13 +41,13 @@
 		    </execution>
 		  </executions>
 		  <configuration>
-		    <repository>testing/foobar</repository>
+		    <repository>test/foobar</repository>
 		    <tag>${project.version}</tag>
 		    <buildArgs>
 		      <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
 		    </buildArgs>
 		  </configuration>
-		</plugin>
+		</plugin>	
     </plugins>
   </build>
 </project>
