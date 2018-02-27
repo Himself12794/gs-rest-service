@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: gs-rest-service-router
+spec:
+  selector:
+    app: gs-rest-service
+  ports:
+  - protocol: TCP
+    name: api-port
+    port: 80
+    targetPort: 8080
