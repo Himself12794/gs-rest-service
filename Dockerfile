@@ -1,6 +1,7 @@
 FROM openjdk:8-jre-alpine
 
 ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/apps/hello-cloud-api/hello-cloud-api.jar"]
+EXPOSE 8080
 
 # Add the service itself
 ARG JAR_FILE
