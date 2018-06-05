@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: gs-rest-service
-        image: containers.cisco.com/phwhitin/gs-rest-service:0.1.0
+        image: containers.cisco.com/phwhitin/gs-rest-service:0.1.1
         ports:
         - containerPort: 8080      
         resources:
