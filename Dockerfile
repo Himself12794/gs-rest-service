@@ -12,10 +12,11 @@ RUN /opt/jdk-9/bin/jlink \
 # Second stage, add only our custom jdk9 distro and our app
 FROM alpine:3.6
 COPY --from=packager /opt/jdk-9-minimal /opt/jdk-9-minimal
-COPY target/*.jar /opt/
+
+COPY . /app
 
 ENV JAVA_HOME=/opt/jdk-9-minimal
 ENV PATH="$PATH:$JAVA_HOME/bin"
 
 EXPOSE 8080
-CMD java -jar /opt/*.jar
+CMD java -jar /app/target/*.jar
