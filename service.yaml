@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: gs-rest-service-router
+  namespace: hello-cloud-native
 spec:
   selector:
     app: gs-rest-service
